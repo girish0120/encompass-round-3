@@ -20,25 +20,25 @@ const products = [
   {
     id: 1,
     name: "Parsely",
-    image: "../assets/vegetable-item-6.png",
+    image: "../assets/vegetable-item-6.jpg",
     price: "$49",
   },
   {
     id: 2,
     name: "Potatoes",
-    image: "../assets/vegetable-item-5.png",
+    image: "../assets/vegetable-item-5.jpg",
     price: "$59",
   },
   {
     id: 3,
     name: "Product C",
-    image: "../assets/vegetable-item-4.png",
+    image: "../assets/vegetable-item-4.jpg",
     price: "$99",
   },
   {
     id: 4,
     name: "Product D",
-    image: "../assets/vegetable-item-3.png",
+    image: "../assets/vegetable-item-3.jpg",
     price: "$39",
   },
   {
