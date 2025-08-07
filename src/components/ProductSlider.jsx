@@ -6,45 +6,48 @@
 
 // export default ProductSlider;
 // src/components/ProductSlider.jsx
-import React from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import vegImg2 from "../assets/vegetable-item-2.jpg";
+import vegImg3 from "../assets/vegetable-item-3.png";
+import vegImg4 from "../assets/vegetable-item-4.jpg";
+import vegImg5 from "../assets/vegetable-item-5.jpg";
+import vegImg6 from "../assets/vegetable-item-6.jpg";
 
-
-import { Navigation, Pagination } from 'swiper/modules';
-
+import { Navigation, Pagination } from "swiper/modules";
 
 const products = [
   {
     id: 1,
     name: "Parsely",
-    image: "../assets/vegetable-item-6.jpg",
+    image: vegImg6,
     price: "$49",
   },
   {
     id: 2,
     name: "Potatoes",
-    image: "../assets/vegetable-item-5.jpg",
+    image: vegImg5,
     price: "$59",
   },
   {
     id: 3,
     name: "Product C",
-    image: "../assets/vegetable-item-4.jpg",
+    image: vegImg4,
     price: "$99",
   },
   {
     id: 4,
     name: "Product D",
-    image: "../assets/vegetable-item-3.jpg",
+    image: vegImg3,
     price: "$39",
   },
   {
     id: 5,
     name: "Product E",
-    image: "../assets/vegetable-item-2.png",
+    image: vegImg2,
     price: "$79",
   },
 ];
@@ -64,7 +67,7 @@ const ProductSlider = () => {
           1024: { slidesPerView: 3 },
         }}
       >
-        {products.map(product => (
+        {products.map((product) => (
           <SwiperSlide key={product.id}>
             <div className="bg-white rounded-lg border-2 shadow-md p-4">
               <img
