@@ -16,6 +16,9 @@ import vegImg3 from "../assets/vegetable-item-3.png";
 import vegImg4 from "../assets/vegetable-item-4.jpg";
 import vegImg5 from "../assets/vegetable-item-5.jpg";
 import vegImg6 from "../assets/vegetable-item-6.jpg";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUser } from "@fortawesome/free-solid-svg-icons";
+import { faBagShopping } from "@fortawesome/free-solid-svg-icons";
 
 import { Navigation, Pagination } from "swiper/modules";
 
@@ -54,7 +57,7 @@ const products = [
 
 const ProductSlider = () => {
   return (
-    <div className="w-full px-4 py-8">
+    <div className="container mx-auto w-full px-4 py-8">
       <Swiper
         modules={[Navigation, Pagination]}
         spaceBetween={20}
@@ -77,8 +80,12 @@ const ProductSlider = () => {
               />
               <h3 className="text-lg font-semibold">{product.name}</h3>
               <p className="text-gray-600">{product.price}</p>
-              <button className="bg-white-200 text-green px-3 py-1 rounded hover:bg-green-600 transition border-green-500">
-                Add to Cart
+              <button class="border border-green-500 text-green-500 px-4 py-2 rounded cursor-poiner mt-4">
+                <FontAwesomeIcon
+                  icon={faBagShopping}
+                  className="text-green-500 mr-2"
+                />
+                Add to cart
               </button>
             </div>
           </SwiperSlide>

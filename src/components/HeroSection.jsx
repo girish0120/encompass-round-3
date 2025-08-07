@@ -11,7 +11,8 @@ export default function HeroSection() {
       category: "Vegetables",
       price: 29.99,
       rating: 4.5,
-      description: "This is a single item product.",
+      description:
+        "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       image: singleItem,
     },
   ];
@@ -44,6 +45,7 @@ export default function HeroSection() {
         <div className="border-b-2 border-grey-300">
           <span className="border-b-2 border-b-yellow-300">Description</span>
         </div>
+        <div>{prodDetails[0].description}</div>
       </div>
     </div>
   );
