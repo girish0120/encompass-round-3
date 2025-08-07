@@ -4,18 +4,16 @@ import { faBagShopping } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function HeroSection() {
-  const prodDetails = [
-    {
-      id: 1,
-      name: "Broccoli",
-      category: "Vegetables",
-      price: 29.99,
-      rating: 4.5,
-      description:
-        "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      image: singleItem,
-    },
-  ];
+  const prodDetails = {
+    id: 1,
+    name: "Broccoli",
+    category: "Vegetables",
+    price: 29.99,
+    rating: 4.5,
+    description:
+      "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    image: singleItem,
+  };
   return (
     <>
       <div
@@ -33,11 +31,11 @@ export default function HeroSection() {
           </div>
           <div className="w-1/2 flex flex-col justify-start items-start">
             <div>
-              <h1 className="text-2xl font-bold">{prodDetails[0].name}</h1>
-              <p className="text-lg">Price: ${prodDetails[0].price}</p>
-              <h2 className="text-md">Category: {prodDetails[0].category}</h2>
-              <p className="text-sm">Rating: {prodDetails[0].rating} / 5</p>
-              <p className="text-sm">{prodDetails[0].description}</p>
+              <h1 className="text-2xl font-bold">{prodDetails.name}</h1>
+              <p className="text-lg">Price: ${prodDetails.price}</p>
+              <h2 className="text-md">Category: {prodDetails.category}</h2>
+              <p className="text-sm">Rating: {prodDetails.rating} / 5</p>
+              <p className="text-sm">{prodDetails.description}</p>
             </div>
             <div className="mt-4">
               <button className="rounded-full border-2 border-yellow-300 text-[#81C408] py-2 px-4">
@@ -54,7 +52,7 @@ export default function HeroSection() {
           <div className="border-b-2 border-grey-300 mb-2">
             <span className="border-b-2 border-b-yellow-300">Description</span>
           </div>
-          <div className="mb-4">{prodDetails[0].description}</div>
+          <div className="mb-4">{prodDetails.description}</div>
           <ProductDetails />
         </div>
       </div>
