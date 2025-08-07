@@ -73,6 +73,9 @@ const ProductSlider = () => {
         {products.map((product) => (
           <SwiperSlide key={product.id}>
             <div className=" bg-white rounded-lg border-2 shadow-md p-4">
+              <span className="absolute top-2 right-2 bg-green-400 text-white text-xs font-semibold px-5 py-3 rounded-xl">
+                Vegetables
+              </span>
               <img
                 src={product.image}
                 alt={product.name}
