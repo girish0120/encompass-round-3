@@ -39,7 +39,7 @@ export default function HeroSection() {
               <p className="text-lg">Price: ${prodDetails.price}</p>
               <p className="text-md">Category: {prodDetails.category}</p>
               <p className="text-sm">Rating: {prodDetails.rating} / 5</p>
-              <p className="text-sm">{prodDetails.description}</p>
+              <p className="text-sm max-w-lg">{prodDetails.description}</p>
             </div>
             <div className="mt-4">
               <button className="rounded-full border-2 border-yellow-300 text-[#81C408] py-2 px-4">
@@ -54,7 +54,9 @@ export default function HeroSection() {
         </div>
         <div>
           <div className="border-b-2 border-grey-300 mb-2">
-            <span className="border-b-2 border-b-yellow-300">Description</span>
+            <span className="border-b-2 border-b-yellow-300  max-w-lg">
+              Description
+            </span>
           </div>
           <div className="mb-4">{prodDetails.description}</div>
           <ProductDetails />
