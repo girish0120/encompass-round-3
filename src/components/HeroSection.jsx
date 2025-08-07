@@ -2,6 +2,7 @@ import React from "react";
 import singleItem from "../assets/single-item.jpg";
 import { faBagShopping } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import bg from "../assets/cart-page-header-img.jpg";
 
 export default function HeroSection() {
   const prodDetails = {
@@ -17,13 +18,16 @@ export default function HeroSection() {
   return (
     <>
       <div
-        className="flex justify-center items-center"
+        className="flex justify-center items-center py-12 flex-col"
         style={{
-          backgroundImage: "url('cart-page-header-img.jpg')",
+          backgroundImage: `url(${bg})`,
           backgroundPosition: "center",
           backgroundSize: "cover",
         }}
-      ></div>
+      >
+        <span className="text-3xl font-bold text-white">Shop Details</span>
+        <span className="text-md text-white">/pages/services</span>
+      </div>
       <div className="container mx-auto py-8 flex justify-between items-stretch flex-col">
         <div className="flex">
           <div className="w-1/2">
@@ -31,9 +35,9 @@ export default function HeroSection() {
           </div>
           <div className="w-1/2 flex flex-col justify-start items-start">
             <div>
-              <h1 className="text-2xl font-bold">{prodDetails.name}</h1>
+              <p className="text-2xl font-bold">{prodDetails.name}</p>
               <p className="text-lg">Price: ${prodDetails.price}</p>
-              <h2 className="text-md">Category: {prodDetails.category}</h2>
+              <p className="text-md">Category: {prodDetails.category}</p>
               <p className="text-sm">Rating: {prodDetails.rating} / 5</p>
               <p className="text-sm">{prodDetails.description}</p>
             </div>
