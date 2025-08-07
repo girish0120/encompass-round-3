@@ -3,8 +3,18 @@ import singleItem from "../assets/single-item.jpg";
 import { faBagShopping } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import bg from "../assets/cart-page-header-img.jpg";
+//import { faStar } from "@fortawesome/free-solid-svg-icons";
+import { faStar, faStarHalfAlt } from "@fortawesome/free-solid-svg-icons";
+import { faMinus, faPlus } from "@fortawesome/free-solid-svg-icons";
 
 export default function HeroSection() {
+  const [quantity, setQuantity] = React.useState(1);
+
+const increaseQty = () => setQuantity((prev) => prev + 1);
+const decreaseQty = () => {
+  if (quantity > 1) setQuantity((prev) => prev - 1);
+};
+
   const prodDetails = {
     id: 1,
     name: "Broccoli",
@@ -38,18 +48,75 @@ export default function HeroSection() {
               <p className="text-2xl font-bold">{prodDetails.name}</p>
               <p className="text-lg">Price: ${prodDetails.price}</p>
               <p className="text-md">Category: {prodDetails.category}</p>
-              <p className="text-sm">Rating: {prodDetails.rating} / 5</p>
+              {/* <p className="text-sm">
+                Rating: {prodDetails.rating}
+                <FontAwesomeIcon icon={faStar} className="text-yellow-400" />/ 5
+              </p> */}
+              <div className="flex items-center gap-1">
+                {[...Array(5)].map((_, i) => {
+                  const fullStars = Math.floor(prodDetails.rating);
+                  const isHalf = prodDetails.rating - fullStars >= 0.5;
+                  if (i < fullStars) {
+                    return (
+                      <FontAwesomeIcon
+                        key={i}
+                        icon={faStar}
+                        className="text-yellow-400"
+                      />
+                    );
+                  } else if (i === fullStars && isHalf) {
+                    return (
+                      <FontAwesomeIcon
+                        key={i}
+                        icon={faStarHalfAlt}
+                        className="text-yellow-400"
+                      />
+                    );
+                  } else {
+                    return (
+                      <FontAwesomeIcon
+                        key={i}
+                        icon={faStar}
+                        className="text-gray-300"
+                      />
+                    );
+                  }
+                })}
+              </div>
+
               <p className="text-sm max-w-lg">{prodDetails.description}</p>
             </div>
-            <div className="mt-4">
-              <button className="rounded-full border-2 border-yellow-300 text-[#81C408] py-2 px-4">
-                <FontAwesomeIcon
-                  icon={faBagShopping}
-                  className="text-[#81C408] text-lg"
-                />
-                Add to Cart
-              </button>
-            </div>
+            {/* Quantity Selector */}
+<div className="flex items-center gap-4 mt-4">
+  <span className="text-sm font-medium">Quantity:</span>
+  <div className="flex items-center border border-gray-300 rounded overflow-hidden">
+    <button
+      onClick={decreaseQty}
+      className="px-3 py-1 bg-gray-100 hover:bg-gray-200"
+    >
+      <FontAwesomeIcon icon={faMinus} className="text-green-700" />
+    </button>
+    <span className="px-4 py-1 text-gray-700">{quantity}</span>
+    <button
+      onClick={increaseQty}
+      className="px-3 py-1 bg-gray-100 hover:bg-gray-200"
+    >
+      <FontAwesomeIcon icon={faPlus} className="text-green-700" />
+    </button>
+  </div>
+</div>
+
+{/* Add to Cart Button */}
+<div className="mt-4">
+  <button className="rounded-full border-2 border-yellow-300 text-[#81C408] py-2 px-4 flex items-center gap-2">
+    <FontAwesomeIcon
+      icon={faBagShopping}
+      className="text-[#81C408] text-lg"
+    />
+    Add to Cart
+  </button>
+</div>
+
           </div>
         </div>
         <div>
