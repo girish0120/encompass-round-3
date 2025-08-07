@@ -51,10 +51,10 @@ export default function HeroSection() {
           </div>
         </div>
         <div>
-          <div className="border-b-2 border-grey-300">
+          <div className="border-b-2 border-grey-300 mb-2">
             <span className="border-b-2 border-b-yellow-300">Description</span>
           </div>
-          <div>{prodDetails[0].description}</div>
+          <div className="mb-4">{prodDetails[0].description}</div>
           <ProductDetails />
         </div>
       </div>
